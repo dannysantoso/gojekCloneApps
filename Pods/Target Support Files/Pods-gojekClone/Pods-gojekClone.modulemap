@@ -1,0 +1,6 @@
+framework module Pods_gojekClone {
+  umbrella header "Pods-gojekClone-umbrella.h"
+
+  export *
+  module * { export * }
+}
