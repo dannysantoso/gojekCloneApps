@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E1715906249FE9CA00EADE0A /* textField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1715905249FE9CA00EADE0A /* textField+Extension.swift */; };
+		E171590B24A0FC2100EADE0A /* customerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171590924A0FC2100EADE0A /* customerViewController.swift */; };
+		E171590C24A0FC2100EADE0A /* customerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E171590A24A0FC2100EADE0A /* customerViewController.xib */; };
 		E183CBE8249F771E00F23030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E183CBE7249F771E00F23030 /* AppDelegate.swift */; };
 		E183CBEA249F771E00F23030 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E183CBE9249F771E00F23030 /* SceneDelegate.swift */; };
 		E183CBEC249F771E00F23030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E183CBEB249F771E00F23030 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2952640C0DDF2192DD69FE93 /* Pods-gojekClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gojekClone.release.xcconfig"; path = "Target Support Files/Pods-gojekClone/Pods-gojekClone.release.xcconfig"; sourceTree = "<group>"; };
 		E1715905249FE9CA00EADE0A /* textField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "textField+Extension.swift"; sourceTree = "<group>"; };
+		E171590924A0FC2100EADE0A /* customerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerViewController.swift; sourceTree = "<group>"; };
+		E171590A24A0FC2100EADE0A /* customerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customerViewController.xib; sourceTree = "<group>"; };
 		E183CBE4249F771E00F23030 /* gojekClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gojekClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E183CBE7249F771E00F23030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E183CBE9249F771E00F23030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				E183CBF5249F772000F23030 /* Info.plist */,
 				E183CBFB249F7BDC00F23030 /* GoogleService-Info.plist */,
 				E1715905249FE9CA00EADE0A /* textField+Extension.swift */,
+				E171590924A0FC2100EADE0A /* customerViewController.swift */,
+				E171590A24A0FC2100EADE0A /* customerViewController.xib */,
 			);
 			path = gojekClone;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 				E183CBFC249F7BDC00F23030 /* GoogleService-Info.plist in Resources */,
 				E183CBF1249F772000F23030 /* Assets.xcassets in Resources */,
 				E183CBEF249F771E00F23030 /* Main.storyboard in Resources */,
+				E171590C24A0FC2100EADE0A /* customerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +224,7 @@
 				E1715906249FE9CA00EADE0A /* textField+Extension.swift in Sources */,
 				E183CBE8249F771E00F23030 /* AppDelegate.swift in Sources */,
 				E183CBEA249F771E00F23030 /* SceneDelegate.swift in Sources */,
+				E171590B24A0FC2100EADE0A /* customerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

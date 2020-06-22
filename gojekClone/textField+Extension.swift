@@ -13,17 +13,19 @@ extension UITextField {
     func underlined(){
         let border = CALayer()
         let width = CGFloat(1.5)
-        
-        if self.traitCollection.userInterfaceStyle == .dark {
-            border.borderColor = UIColor.white.cgColor
-        } else {
-            border.borderColor = UIColor.black.cgColor
-        }
-        
+        border.borderColor = UIColor.systemGray.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = width
         border.cornerRadius = width / 2
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
+    }
+}
+
+extension UIViewController: UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
