@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-ry-AW4">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="danny@gmail.com" placeholder="email@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-ry-AW4">
                                 <rect key="frame" x="40" y="291" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gxO-LE-fDR"/>
@@ -36,7 +36,7 @@
                                     <action selector="tfEmail:" destination="BYZ-38-t0r" eventType="editingChanged" id="qVk-8Y-RXt"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-8y-qHS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dannys1998" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-8y-qHS">
                                 <rect key="frame" x="40" y="356" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5EC-Is-LMF"/>
