@@ -68,6 +68,27 @@ class ViewController: UIViewController {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else{
                                 print("Sign Up Success")
+                                if self.switchBtn.isOn{
+                                    //drver
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    req?.displayName = "Driver"
+                                    req?.commitChanges(completion: nil)
+                                    
+                                    let destination = driverViewController(nibName: "driverViewController", bundle: nil)
+                                    
+                                    self.navigationController?.pushViewController(destination, animated: true)
+                                    
+                                    
+                                } else{
+                                    //rider
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    req?.displayName = "Rider"
+                                    req?.commitChanges(completion: nil)
+                                    
+                                    let destination = customerViewController(nibName: "customerViewController", bundle: nil)
+                                    
+                                    self.navigationController?.pushViewController(destination, animated: true)
+                                }
                             }
                         })
                     } else {
@@ -78,9 +99,20 @@ class ViewController: UIViewController {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else{
                                 print("Sign In Success")
-                                let destination = customerViewController(nibName: "customerViewController", bundle: nil)
                                 
-                                self.navigationController?.pushViewController(destination, animated: true)
+                                if user?.user.displayName == "Driver" {
+                                    //driver
+                                    print("driver")
+                                    let destination = driverViewController(nibName: "driverViewController", bundle: nil)
+                                    
+                                    self.navigationController?.pushViewController(destination, animated: true)
+                                }else{
+                                    //rider
+                                    print("rider")
+                                    let destination = customerViewController(nibName: "customerViewController", bundle: nil)
+                                    
+                                    self.navigationController?.pushViewController(destination, animated: true)
+                                }
                             }
                         })
                     }
