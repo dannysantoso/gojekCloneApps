@@ -34,6 +34,7 @@ class driverViewController: UIViewController, CLLocationManagerDelegate {
         })
 
         driverTableView.dataSource = self
+        driverTableView.delegate = self
         
         driverTableView.register(UINib(nibName: "driverTableViewCell", bundle: nil), forCellReuseIdentifier: "driverCell")
         
@@ -90,5 +91,28 @@ extension driverViewController: UITableViewDataSource{
 }
 
 extension driverViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = driverMapViewController(nibName: "driverMapViewController", bundle: nil)
+        
+        let snapshot = rideRequest[indexPath.row]
+        
+        if let rideRequestDictionary = snapshot.value as? [String:AnyObject]{
+            if let email = rideRequestDictionary["email"] as? String {
+            
+                if let lat = rideRequestDictionary["lat"] as? Double{
+                    if let lon = rideRequestDictionary["lon"] as? Double{
+                        destination.requestEmail = email
+                        
+                        let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                        
+                        destination.requestLocation = location
+                        destination.driverLocation = driverLocation
+                    }
+                }
+            }
+        }
+
+        self.navigationController?.pushViewController(destination, animated: true)
+    }
     
 }
