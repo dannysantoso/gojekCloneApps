@@ -33,7 +33,7 @@ class driverMapViewController: UIViewController {
 
     @IBAction func acceptRequest(_ sender: Any) {
         //update ride request
-        Database.database().reference().child("RiderRequests").queryOrdered(byChild: "email").queryEqual(toValue: requestEmail).observe(.childAdded, with: {
+        Database.database().reference().child("RideRequests").queryOrdered(byChild: "email").queryEqual(toValue: requestEmail).observe(.childAdded, with: {
             (snapshot) in
             snapshot.ref.updateChildValues(["driverLat": self.driverLocation.latitude,
                                             "driverlon": self.driverLocation.longitude])

@@ -79,6 +79,87 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E10AE26524A627DB00764DA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E183CBED249F771E00F23030 /* Main.storyboard */,
+				E183CBF2249F772000F23030 /* LaunchScreen.storyboard */,
+				E10AE26724A627F500764DA1 /* rider */,
+				E10AE26624A627EA00764DA1 /* driver */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E10AE26624A627EA00764DA1 /* driver */ = {
+			isa = PBXGroup;
+			children = (
+				E171590E24A3E88200EADE0A /* driverViewController.xib */,
+				E171591624A4D0F500EADE0A /* driverMapViewController.xib */,
+				E10AE26C24A6285700764DA1 /* cell */,
+			);
+			path = driver;
+			sourceTree = "<group>";
+		};
+		E10AE26724A627F500764DA1 /* rider */ = {
+			isa = PBXGroup;
+			children = (
+				E171590A24A0FC2100EADE0A /* customerViewController.xib */,
+			);
+			path = rider;
+			sourceTree = "<group>";
+		};
+		E10AE26824A627FC00764DA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E183CBEB249F771E00F23030 /* ViewController.swift */,
+				E10AE26924A6280200764DA1 /* rider */,
+				E10AE26A24A6280800764DA1 /* driver */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E10AE26924A6280200764DA1 /* rider */ = {
+			isa = PBXGroup;
+			children = (
+				E171590924A0FC2100EADE0A /* customerViewController.swift */,
+			);
+			path = rider;
+			sourceTree = "<group>";
+		};
+		E10AE26A24A6280800764DA1 /* driver */ = {
+			isa = PBXGroup;
+			children = (
+				E171590D24A3E88200EADE0A /* driverViewController.swift */,
+				E171591524A4D0F500EADE0A /* driverMapViewController.swift */,
+				E10AE26B24A6282B00764DA1 /* cell */,
+			);
+			path = driver;
+			sourceTree = "<group>";
+		};
+		E10AE26B24A6282B00764DA1 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E171591124A46E6F00EADE0A /* driverTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		E10AE26C24A6285700764DA1 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E171591224A46E6F00EADE0A /* driverTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		E10AE26D24A6286F00764DA1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E1715905249FE9CA00EADE0A /* textField+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E183CBDB249F771E00F23030 = {
 			isa = PBXGroup;
 			children = (
@@ -100,23 +181,14 @@
 		E183CBE6249F771E00F23030 /* gojekClone */ = {
 			isa = PBXGroup;
 			children = (
+				E10AE26D24A6286F00764DA1 /* Extension */,
+				E10AE26824A627FC00764DA1 /* Controller */,
+				E10AE26524A627DB00764DA1 /* View */,
 				E183CBE7249F771E00F23030 /* AppDelegate.swift */,
 				E183CBE9249F771E00F23030 /* SceneDelegate.swift */,
-				E183CBEB249F771E00F23030 /* ViewController.swift */,
-				E183CBED249F771E00F23030 /* Main.storyboard */,
 				E183CBF0249F772000F23030 /* Assets.xcassets */,
-				E183CBF2249F772000F23030 /* LaunchScreen.storyboard */,
 				E183CBF5249F772000F23030 /* Info.plist */,
 				E183CBFB249F7BDC00F23030 /* GoogleService-Info.plist */,
-				E1715905249FE9CA00EADE0A /* textField+Extension.swift */,
-				E171590924A0FC2100EADE0A /* customerViewController.swift */,
-				E171590A24A0FC2100EADE0A /* customerViewController.xib */,
-				E171590D24A3E88200EADE0A /* driverViewController.swift */,
-				E171590E24A3E88200EADE0A /* driverViewController.xib */,
-				E171591124A46E6F00EADE0A /* driverTableViewCell.swift */,
-				E171591224A46E6F00EADE0A /* driverTableViewCell.xib */,
-				E171591524A4D0F500EADE0A /* driverMapViewController.swift */,
-				E171591624A4D0F500EADE0A /* driverMapViewController.xib */,
 			);
 			path = gojekClone;
 			sourceTree = "<group>";
