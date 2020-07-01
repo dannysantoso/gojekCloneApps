@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10AE26F24A874A900764DA1 /* createProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AE26E24A874A900764DA1 /* createProfileViewController.swift */; };
 		E1715906249FE9CA00EADE0A /* textField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1715905249FE9CA00EADE0A /* textField+Extension.swift */; };
 		E171590B24A0FC2100EADE0A /* customerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E171590924A0FC2100EADE0A /* customerViewController.swift */; };
 		E171590C24A0FC2100EADE0A /* customerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E171590A24A0FC2100EADE0A /* customerViewController.xib */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		2952640C0DDF2192DD69FE93 /* Pods-gojekClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gojekClone.release.xcconfig"; path = "Target Support Files/Pods-gojekClone/Pods-gojekClone.release.xcconfig"; sourceTree = "<group>"; };
+		E10AE26E24A874A900764DA1 /* createProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createProfileViewController.swift; sourceTree = "<group>"; };
 		E1715905249FE9CA00EADE0A /* textField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "textField+Extension.swift"; sourceTree = "<group>"; };
 		E171590924A0FC2100EADE0A /* customerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerViewController.swift; sourceTree = "<group>"; };
 		E171590A24A0FC2100EADE0A /* customerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customerViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E183CBEB249F771E00F23030 /* ViewController.swift */,
+				E10AE26E24A874A900764DA1 /* createProfileViewController.swift */,
 				E10AE26924A6280200764DA1 /* rider */,
 				E10AE26A24A6280800764DA1 /* driver */,
 			);
@@ -317,6 +320,7 @@
 				E171591724A4D0F500EADE0A /* driverMapViewController.swift in Sources */,
 				E183CBEC249F771E00F23030 /* ViewController.swift in Sources */,
 				E1715906249FE9CA00EADE0A /* textField+Extension.swift in Sources */,
+				E10AE26F24A874A900764DA1 /* createProfileViewController.swift in Sources */,
 				E171590F24A3E88200EADE0A /* driverViewController.swift in Sources */,
 				E183CBE8249F771E00F23030 /* AppDelegate.swift in Sources */,
 				E183CBEA249F771E00F23030 /* SceneDelegate.swift in Sources */,

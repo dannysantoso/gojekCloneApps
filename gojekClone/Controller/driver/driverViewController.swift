@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import MapKit
+import SwiftKeychainWrapper
 
 class driverViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -18,14 +19,51 @@ class driverViewController: UIViewController, CLLocationManagerDelegate {
     var rideRequest : [DataSnapshot] = []
     var locationManager = CLLocationManager()
     var driverLocation = CLLocationCoordinate2D()
+    var currentUser = KeychainWrapper.standard.string(forKey: "uid")
+    var driverId:String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization() //ask user request
         locationManager.startUpdatingLocation()
+        
+        
+        Database.database().reference().child("RideRequests").queryOrdered(byChild: "driverId").queryEqual(toValue: currentUser).observe(.childAdded, with: { //.childAdded means whenever there is child added remove it
+            (snapshot) in
+                if let rideRequestDictionary = snapshot.value as? [String:AnyObject]{
+                    if let id = rideRequestDictionary["driverId"] as? String{
+                        if let email = rideRequestDictionary["username"] as? String {
+                            if let lat = rideRequestDictionary["lat"] as? Double{
+                                if let lon = rideRequestDictionary["lon"] as? Double{
+                                    self.driverId = id
+                                    
+                                    
+                                    let destination = driverMapViewController(nibName: "driverMapViewController", bundle: nil)
+                            
+                                    let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                                    
+                                    destination.requestEmail = email
+                                    destination.requestLocation = location
+                                    destination.driverLocation = self.driverLocation
+
+
+                                    self.navigationController?.pushViewController(destination, animated: true)
+                                }
+                            }
+                        }
+                    }
+                }
+            Database.database().reference().child("RideRequests").removeAllObservers()
+        })
+        
+        
         
         Database.database().reference().child("RideRequests").observe(.childAdded, with: {
             (snapshot) in
@@ -55,6 +93,22 @@ class driverViewController: UIViewController, CLLocationManagerDelegate {
             driverLocation = coord
         }
     }
+    
+    @IBAction func temporaryLogout(_ sender: Any) {
+        //jika user logout
+        try? Auth.auth().signOut()
+        KeychainWrapper.standard.removeObject(forKey: "uid")
+        KeychainWrapper.standard.removeObject(forKey: "type")
+
+        //membuat rootviewcontroller baru
+        let onboardingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "welcome")
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [onboardingViewController]
+        view.window?.rootViewController = navigationController
+        view.window?.makeKeyAndVisible()
+
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 
@@ -69,7 +123,7 @@ extension driverViewController: UITableViewDataSource{
         let snapshot = rideRequest[indexPath.row]
         
         if let rideRequestDictionary = snapshot.value as? [String:AnyObject]{
-            if let email = rideRequestDictionary["email"] as? String {
+            if let email = rideRequestDictionary["username"] as? String {
                 
                 if let lat = rideRequestDictionary["lat"] as? Double{
                     if let lon = rideRequestDictionary["lon"] as? Double{
