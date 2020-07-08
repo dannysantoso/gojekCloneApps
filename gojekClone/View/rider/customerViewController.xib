@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="map" destination="rSk-lE-ASL" id="xgV-Iz-Gso"/>
                 <outlet property="orderBtn" destination="fuS-vU-9eA" id="OrS-Xk-omK"/>
+                <outlet property="tfSearch" destination="wEY-IQ-TRz" id="Npz-Ey-zOu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rSk-lE-ASL">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="638"/>
+                    <rect key="frame" x="0.0" y="142" width="414" height="535"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuS-vU-9eA">
-                    <rect key="frame" x="20" y="646" width="374" height="30"/>
+                    <rect key="frame" x="20" y="710" width="374" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Order"/>
                     <connections>
@@ -37,6 +38,20 @@
                     <state key="normal" title="log out"/>
                     <connections>
                         <action selector="logout:" destination="-1" eventType="touchUpInside" id="88A-vj-sA2"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wEY-IQ-TRz">
+                    <rect key="frame" x="20" y="82" width="304" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57b-21-th1">
+                    <rect key="frame" x="347" y="84" width="48" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Search"/>
+                    <connections>
+                        <action selector="searchBtn:" destination="-1" eventType="touchUpInside" id="NJx-5s-tiE"/>
                     </connections>
                 </button>
             </subviews>

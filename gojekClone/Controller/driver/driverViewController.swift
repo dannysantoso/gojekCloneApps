@@ -42,19 +42,25 @@ class driverViewController: UIViewController, CLLocationManagerDelegate {
                         if let email = rideRequestDictionary["username"] as? String {
                             if let lat = rideRequestDictionary["lat"] as? Double{
                                 if let lon = rideRequestDictionary["lon"] as? Double{
-                                    self.driverId = id
+                                    if let destinationLat = rideRequestDictionary["destinationLat"] as? Double{
+                                        if let destinationLon = rideRequestDictionary["destinationLon"] as? Double{
+                                            self.driverId = id
+                                            
+                                            
+                                            let destination = driverMapViewController(nibName: "driverMapViewController", bundle: nil)
                                     
-                                    
-                                    let destination = driverMapViewController(nibName: "driverMapViewController", bundle: nil)
-                            
-                                    let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                                    
-                                    destination.requestEmail = email
-                                    destination.requestLocation = location
-                                    destination.driverLocation = self.driverLocation
+                                            let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                                            let destinationLocation = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLon)
+                                            
+                                            destination.requestEmail = email
+                                            destination.requestLocation = location
+                                            destination.requestDestinationLocation = destinationLocation
+                                            destination.driverLocation = self.driverLocation
 
 
-                                    self.navigationController?.pushViewController(destination, animated: true)
+                                            self.navigationController?.pushViewController(destination, animated: true)
+                                        }
+                                    }
                                 }
                             }
                         }

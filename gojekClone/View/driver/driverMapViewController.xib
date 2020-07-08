@@ -9,7 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="driverMapViewController" customModule="gojekClone" customModuleProvider="target">
             <connections>
+                <outlet property="acceptRequest" destination="ToW-XT-oEe" id="3Qy-WA-NeE"/>
+                <outlet property="directionBtn" destination="2eK-gm-9PA" id="LNF-fK-Yrt"/>
                 <outlet property="mapView" destination="gUR-fE-ofA" id="5OW-Re-3Cw"/>
+                <outlet property="userDirectionBtn" destination="wFj-lY-ATA" id="XE8-hk-Bhy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,6 +31,23 @@
                     <state key="normal" title="Accept Request"/>
                     <connections>
                         <action selector="acceptRequest:" destination="-1" eventType="touchUpInside" id="OAc-fE-Iud"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-gm-9PA">
+                    <rect key="frame" x="176" y="618" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Direction"/>
+                    <connections>
+                        <action selector="acceptRequest:" destination="-1" eventType="touchUpInside" id="dbc-we-HrP"/>
+                        <action selector="directionBtn:" destination="-1" eventType="touchUpInside" id="ulX-yC-bQO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFj-lY-ATA">
+                    <rect key="frame" x="149" y="698" width="116" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Direction to User"/>
+                    <connections>
+                        <action selector="directionUserBtn:" destination="-1" eventType="touchUpInside" id="lSt-xL-RlD"/>
                     </connections>
                 </button>
             </subviews>
