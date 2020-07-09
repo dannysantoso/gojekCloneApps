@@ -27,7 +27,11 @@ class createProfileViewController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        returnKeyboard()
+        dismissKeyboard()
+        
         setImagePicker()
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         
         
 
@@ -135,5 +139,18 @@ class createProfileViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func btnAddPhoto(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func returnKeyboard(){
+        tfName.delegate = self
+    }
+    
+    func dismissKeyboard(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(){
+        self.view.endEditing(true)
     }
 }

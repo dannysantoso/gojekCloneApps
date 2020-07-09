@@ -21,37 +21,56 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-fE-ofA">
-                    <rect key="frame" x="19" y="124" width="376" height="373"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-fE-ofA">
+                    <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="500" id="pqo-9z-t82"/>
+                    </constraints>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToW-XT-oEe">
-                    <rect key="frame" x="153" y="505" width="109" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToW-XT-oEe">
+                    <rect key="frame" x="20" y="564" width="374" height="50"/>
+                    <color key="backgroundColor" red="0.2978070974" green="0.65565192699999997" blue="0.2077120841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EOt-1W-nFZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="tintColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Accept Request"/>
                     <connections>
                         <action selector="acceptRequest:" destination="-1" eventType="touchUpInside" id="OAc-fE-Iud"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-gm-9PA">
-                    <rect key="frame" x="176" y="618" width="62" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFj-lY-ATA">
+                    <rect key="frame" x="20" y="724" width="374" height="30"/>
+                    <state key="normal" title="Direction to User"/>
+                    <connections>
+                        <action selector="directionUserBtn:" destination="-1" eventType="touchUpInside" id="lSt-xL-RlD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-gm-9PA">
+                    <rect key="frame" x="20" y="654" width="374" height="30"/>
                     <state key="normal" title="Direction"/>
                     <connections>
                         <action selector="acceptRequest:" destination="-1" eventType="touchUpInside" id="dbc-we-HrP"/>
                         <action selector="directionBtn:" destination="-1" eventType="touchUpInside" id="ulX-yC-bQO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFj-lY-ATA">
-                    <rect key="frame" x="149" y="698" width="116" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Direction to User"/>
-                    <connections>
-                        <action selector="directionUserBtn:" destination="-1" eventType="touchUpInside" id="lSt-xL-RlD"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="wFj-lY-ATA" firstAttribute="top" secondItem="2eK-gm-9PA" secondAttribute="bottom" constant="40" id="AB2-YD-yFp"/>
+                <constraint firstItem="2eK-gm-9PA" firstAttribute="top" secondItem="ToW-XT-oEe" secondAttribute="bottom" constant="40" id="AfI-oq-UTE"/>
+                <constraint firstItem="gUR-fE-ofA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hx3-V2-dyY"/>
+                <constraint firstItem="2eK-gm-9PA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="P30-3m-Pdq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2eK-gm-9PA" secondAttribute="trailing" constant="20" id="ThF-QC-uSF"/>
+                <constraint firstItem="gUR-fE-ofA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ThO-6l-9Rs"/>
+                <constraint firstItem="ToW-XT-oEe" firstAttribute="top" secondItem="gUR-fE-ofA" secondAttribute="bottom" constant="20" id="Ywr-37-0H1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gUR-fE-ofA" secondAttribute="trailing" id="a0M-xs-pzr"/>
+                <constraint firstItem="wFj-lY-ATA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cTd-Zy-6lN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wFj-lY-ATA" secondAttribute="trailing" constant="20" id="iQa-uq-i3d"/>
+                <constraint firstItem="ToW-XT-oEe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sfy-Hj-L9r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ToW-XT-oEe" secondAttribute="trailing" constant="20" id="uSk-iV-UdP"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
         </view>

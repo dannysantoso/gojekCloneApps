@@ -34,6 +34,9 @@ class customerViewController: UIViewController, CLLocationManagerDelegate, MKMap
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        returnKeyboard()
+        dismissKeyboard()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -67,11 +70,22 @@ class customerViewController: UIViewController, CLLocationManagerDelegate, MKMap
                 if let rideRequestDictionary = snapshot.value as? [String:AnyObject]{
                     if let driverLat = rideRequestDictionary["driverLat"] as? Double{
                         if let driverLon = rideRequestDictionary["driverlon"] as? Double{
-                            self.driverLocation = CLLocationCoordinate2D(latitude: driverLat, longitude: driverLon)
-                            self.driverOnTheWay = true
-                            self.driverLat = String(driverLat)
-                            self.driverLon = String(driverLon)
-                            self.displayDriverAndUser()
+                            if let destinationLat = rideRequestDictionary["destinationLat"] as? Double{
+                                if let destinationLon = rideRequestDictionary["destinationLon"] as? Double{
+                                    self.destinationLocation = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLon)
+                                    self.driverLocation = CLLocationCoordinate2D(latitude: driverLat, longitude: driverLon)
+                                    self.driverOnTheWay = true
+                                    self.driverLat = String(driverLat)
+                                    self.driverLon = String(driverLon)
+                                    self.displayDriverAndUser()
+                                    self.mapThis(destinationCord: self.destinationLocation)
+                                    
+                                    let annotation2 = MKPointAnnotation()
+                                    annotation2.coordinate = self.destinationLocation
+                                    annotation2.title = "Destination"
+                                    self.map.addAnnotation(annotation2)
+                                    }
+                                }
                             
                             
 //                            //get driver data when they moved / updated
@@ -325,5 +339,18 @@ class customerViewController: UIViewController, CLLocationManagerDelegate, MKMap
         view.window?.makeKeyAndVisible()
         
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func returnKeyboard(){
+        tfSearch.delegate = self
+    }
+    
+    func dismissKeyboard(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(){
+        self.view.endEditing(true)
     }
 }

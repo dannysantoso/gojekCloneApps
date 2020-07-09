@@ -18,21 +18,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xlw-w1-QUR">
-                    <rect key="frame" x="0.0" y="178" width="414" height="718"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xlw-w1-QUR">
+                    <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCJ-d4-1dR">
-                    <rect key="frame" x="336" y="97" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCJ-d4-1dR">
+                    <rect key="frame" x="304" y="74" width="80" height="40"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="7Xu-Y1-22x"/>
+                        <constraint firstAttribute="width" constant="80" id="PDi-wA-wgb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <color key="tintColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Log out"/>
                     <connections>
                         <action selector="temporaryLogout:" destination="-1" eventType="touchUpInside" id="qIS-1P-c9r"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="VCJ-d4-1dR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="3dQ-6r-jEQ"/>
+                <constraint firstItem="Xlw-w1-QUR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O34-hA-VTX"/>
+                <constraint firstAttribute="bottom" secondItem="Xlw-w1-QUR" secondAttribute="bottom" id="c8q-DK-CNt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VCJ-d4-1dR" secondAttribute="trailing" constant="30" id="dqV-DG-Ewk"/>
+                <constraint firstItem="Xlw-w1-QUR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nYY-Lw-WeR"/>
+                <constraint firstItem="Xlw-w1-QUR" firstAttribute="top" secondItem="VCJ-d4-1dR" secondAttribute="bottom" constant="30" id="qqU-O7-vRA"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
         </view>
